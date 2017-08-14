@@ -6,11 +6,15 @@
       <hr>
     </div>
     <div class="col-mn-9">
-      <ul>
-        <li *ngFor="let artist of _spotifyService.artists">
-          {{artist.name}}
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-md-3 text-center" *ngFor="let artist of _spotifyService.artists">
+          <img [src]="artist.images | noPhoto" class="img-fluid img-thumbnail">
+          <p>
+            {{artist.name}}
+          </p>
+          <hr>
+        </div>
+      </div>
     </div>
   </div>
 </div>

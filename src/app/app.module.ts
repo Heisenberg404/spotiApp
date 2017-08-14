@@ -8,13 +8,15 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {SpotifyService} from './services/spotify.service';
+import { NoPhotoPipe } from './pipes/no-photo.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoPhotoPipe
   ],
   imports: [
     BrowserModule,

@@ -15,12 +15,34 @@ export class SpotifyService {
     let query = `?q=${parameter}&type=artist`;
     let url = this.urlSearch + query;
     let headers = new Headers();
-    headers.append('authorization', 'Bearer BQBNidm_2IBy36-v8wZ5QLjbjIrx438UnPsGGkcPfZM38I2nl5umLvAJzZpp5EK4V0y2Vc_Euv1_sPOI63UiHQ');
+    headers.append('authorization', 'Bearer BQBs_8ksb_EeRief6YyJIU42reUXKvJWASUyzuKq9YzA2mTHaqTQ9gFu6ujc2PKxaf2Qfz9DLOEOWy6nabyIqw');
     return this.http.get(url, {headers} ).map( res => {
       // console.log(res.json().artists);
       this.artists = res.json().artists.items;
       console.log(this.artists);
       // return this.artists;
+    });
+  }
+
+  getArtist(id: String) {
+    let query = `/${id}`;
+    let url = this.urlArtist + query;
+    let headers = new Headers();
+    headers.append('authorization', 'Bearer BQBs_8ksb_EeRief6YyJIU42reUXKvJWASUyzuKq9YzA2mTHaqTQ9gFu6ujc2PKxaf2Qfz9DLOEOWy6nabyIqw');
+    return this.http.get(url, {headers} ).map( res => {
+       //console.log(res.json());
+      return res.json();
+    });
+  }
+
+  getArtistTop(id: String) {
+    let query = `/${id}/top-tracks?country=US`;
+    let url = this.urlArtist + query;
+    let headers = new Headers();
+    headers.append('authorization', 'Bearer BQBs_8ksb_EeRief6YyJIU42reUXKvJWASUyzuKq9YzA2mTHaqTQ9gFu6ujc2PKxaf2Qfz9DLOEOWy6nabyIqw');
+    return this.http.get(url, {headers} ).map( res => {
+      console.log(res.json().tracks);
+      return res.json().tracks;
     });
   }
 }

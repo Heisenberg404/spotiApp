@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {SpotifyService} from './services/spotify.service';
 import { NoPhotoPipe } from './pipes/no-photo.pipe';
+import { ArtistComponent } from './components/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NoPhotoPipe } from './pipes/no-photo.pipe';
     HomeComponent,
     SearchComponent,
     NavbarComponent,
-    NoPhotoPipe
+    NoPhotoPipe,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,

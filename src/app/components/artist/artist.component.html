@@ -1,7 +1,16 @@
-<p>
-  artist works!
-</p>
+<div *ngIf="artist">
+  <div class="row">
+    <div class="col-md-3 text-center">
+      <img [src]="artist.image | noPhoto" class="img-thumbnail img-circle">
+      <br>
+    </div>
+    <div class="col-md-9">
+      <h3>{{artist.name}}<small>Popularity: {{artist.popularity}}</small></h3>
+      <hr>
+      <a [href]="artist.external_urls?.spotify" class="btn btn-outline-success">go to page</a>
+      <a [routerLink]="['/artists']" class="btn btn-outline-danger">go back</a>
+    </div>
 
-<pre>
-  {{artist | json}}
-</pre>
+  </div>
+
+</div>
